@@ -10,20 +10,20 @@ bartender.load_analizer()
 def by_mix():
     if request.method == "GET":
         json_message = request.get_json()
-        return bartender.get_recommendation_list(json_message["user_input"], k=10).to_json()
+        return bartender.get_recommendation_list(json_message["user_input"], k=json_message["rec_num"])
 
 @app.route("/by_ingredients", methods=["GET", "POST"])
 def by_ingredients():
     if request.method == "GET":
         json_message = request.get_json()
-        return bartender.get_recommendation_list_by_ingredient(json_message["user_input"], k=5).to_json()
+        return bartender.get_recommendation_list_by_ingredient(json_message["user_input"], k=json_message["rec_num"])
 
 
 @app.route("/by_name", methods=["GET", "POST"])
 def by_name():
     if request.method == "GET":
         json_message = request.get_json()
-        return bartender.get_recommendation_list_by_name(json_message["user_input"], k=5).to_json()
+        return bartender.get_recommendation_list_by_name(json_message["user_input"], k=json_message["rec_num"])
 
 
 

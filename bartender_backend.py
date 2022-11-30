@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer, ENGLISH_STOP_WORDS
 from sklearn.metrics.pairwise import linear_kernel
+import json
 
 class Bartender():
     def __init__(self, file_path="dataset/cocktail_all.csv"):
@@ -35,6 +36,15 @@ class Bartender():
 
         self.image_url = pd.read_csv("dataset/image_url.csv")
 
+    def convert_df_2_json(self, df):
+        out = {"name":[], "all_ingredients": [], "preparation": [], "image": []}
+        out["name"] = list(df["Cocktail Name"])
+        out["all_ingredients"] = list(df["All Ingredients"])
+        out["preparation"] = list(df["Preparation"])
+        out["image"] = self.get_image_url_list(out["name"])
+        return json.dumps(out)
+            
+
     def get_similarity_matrix_by_ingredients(self, user_input):
         user_input_vector = self.vectorizer.transform([user_input])
         similarity_vector = linear_kernel(self.tfidf_matrix, user_input_vector)
@@ -42,7 +52,7 @@ class Bartender():
 
     def get_recommendation_list_by_ingredient(self, user_input, k=10):
         similar_items = self.get_similarity_matrix_by_ingredients(user_input)
-        return self.df[self.df['Cocktail Name'].isin(similar_items[:k].index)]
+        return self.convert_df_2_json(self.df[self.df['Cocktail Name'].isin(similar_items[:k].index)])
 
     def get_similarity_matrix_by_name(self, user_input, k=5):
         user_input_vector = self.name_vectorizer.transform([user_input])
@@ -51,7 +61,7 @@ class Bartender():
 
     def get_recommendation_list_by_name(self, user_input, k=5):
         similar_items = self.get_similarity_matrix_by_name(user_input)
-        return self.df[self.df['Cocktail Name'].isin(similar_items[:k].index)]
+        return self.convert_df_2_json(self.df[self.df['Cocktail Name'].isin(similar_items[:k].index)])
 
     def get_recommendation_list(self, user_input, k=10):
         similar_items_by_ingredient = self.get_similarity_matrix_by_ingredients(user_input)
@@ -59,9 +69,9 @@ class Bartender():
 
         similar_items = pd.concat([similar_items_by_ingredient, similar_items_by_name], axis=0)
         similar_items_sorted = similar_items.sort_values(by='Similarity', ascending=False)[:k]
-        return self.df[self.df['Cocktail Name'].isin(similar_items_sorted[:k].index)]
+        return self.convert_df_2_json(self.df[self.df['Cocktail Name'].isin(similar_items_sorted[:k].index)])
 
-    def get_image_url_list(self, names, placeHolder_addrss="path/to/local/address"):
+    def get_image_url_list(self, names, placeHolder_addrss="img/default_img.png"):
         url_list = []
         for name in names:
             if name in np.array(self.image_url["Name"]):
