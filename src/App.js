@@ -10,39 +10,23 @@ const { Header, Content, Sider } = Layout;
  
 class App extends React.Component {
   state = {
-    topDrinks: [],
     resources: [],
   }
 
   onDrinkSelect = ({ key }) => {
-    if (key === 'Recommendation') {
-      getRecommendations().then((data) => {
-        this.setState({
-          resources: data,
-        })
+    searchDrinkByName(key).then((data) => {
+      this.setState({
+        resources: data,
       })
- 
-      return;
+    })
   }
 
-  searchDrinkByName(key).then((data) => {
+  NameSearchOnSuccess = (data) => {
     this.setState({
       resources: data,
     })
-  })
-}
+  }
 
-NameSearchOnSuccess = (data) => {
-  this.setState({
-    resources: data,
-  })
-}
- 
-IngredientSearchOnSuccess = (data) => {
-  this.setState({
-    resources: data,
-  })
-}
   render = () => (
     <Layout>
       <Header>
@@ -51,7 +35,6 @@ IngredientSearchOnSuccess = (data) => {
       <Layout>
         <Sider width={300} className="site-layout-background">
           <NameSearch onSuccess={this.NameSearchOnSuccess} />
-          <Ingredients onSuccess={this.IngredientSearchOnSuccess} />
           <Menu
             mode="inline"
             onSelect={this.onDrinkSelect}
