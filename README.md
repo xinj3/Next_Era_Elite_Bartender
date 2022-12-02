@@ -54,15 +54,19 @@ Or, use ```HTTP``` GET request to get the recommendation list from ```http://loc
 ## Env Requirements
 Install nodejs: https://nodejs.org/en/
 
-Navigate into ```test``` folder, and install dependencies:
+Navigate into ```frontend``` folder, and install dependencies:
 ```
 cd test
 npm install
 ```
 
-**- Copy the folder ```antd``` into your ```test/node_modules``` folder and replace the current one** (This is because our antd uses a previous version)
+**- Copy the folder ```antd``` into your ```frontend/node_modules``` folder and replace the current one** (This is because our antd uses a previous version)
 
 ## Run Local Frontend
+```
+npm start
+```
+
 The website is running on localhost at:
 ```
 http://localhost:3000
