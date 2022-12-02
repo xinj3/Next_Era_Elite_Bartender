@@ -66,6 +66,7 @@ npm add antd
 ```
 
 **Copy the files and folders(public, src, package.json, package-lock.json) into your created project**
+**Copy the folder antd into your node_modules folder**
 
 ## Run Local Frontend
 ```
