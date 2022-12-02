@@ -58,14 +58,20 @@ Since node modules are too large to be uploaded, users need to create their own 
 ```
 npx create-react-app test
 ```
+```
+npm add antd
+```
 
-Copy the files and folders(public, src, package.json, package-lock.json) into your created project
+** Copy the files and folders(public, src, package.json, package-lock.json) into your created project **
 
 ## Run Local Frontend
 ```
 npm start
 ```
-Localhost is at http://localhost:3000.
+Localhost is at:
+```
+http://localhost:3000.
+```
 
 ## Interact
 Simply click on the three different search buttons and search whatever you want.
