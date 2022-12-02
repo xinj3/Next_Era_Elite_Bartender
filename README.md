@@ -59,6 +59,9 @@ Since node modules are too large to be uploaded, users need to create their own 
 npx create-react-app test
 ```
 ```
+cd test
+```
+```
 npm add antd
 ```
 
