@@ -2,20 +2,22 @@
 
 Git Repo for CS410 final project team `Next_Era_Elite_Bartender`
 
-# Env Requirements
+# Backend
+
+## Env Requirements
 
 ```
 pip install -r requirements.txt
 ```
 
-# Run Local Server
+## Run Local Server
 ```
 python app.py
 ```
 
 Localhost is at http://localhost:8080.
 
-# Get Recommendation
+## Get Recommendation
 
 Use ```HTTP``` GET request to get the recommendation list from ```http://localhost:8080/``` for default recommendation:
 
@@ -46,3 +48,27 @@ Or, use ```HTTP``` GET request to get the recommendation list from ```http://loc
 ```
 {"user_input": "lemon, gin", "rec_num": 5}
 ```
+
+# Frontend 
+
+## Env Requirements
+Install nodejs: https://nodejs.org/en/
+
+Since node modules are too large to be uploaded, users need to create their own nodejs project, running:
+```
+npx create-react-app test
+```
+
+Copy the files and folders(public, src, package.json, package-lock.json) into your created project
+
+## Run Local Frontend
+```
+npm start
+```
+Localhost is at http://localhost:3000.
+
+## Interact
+Simply click on the three different search buttons and search whatever you want.
+
+## Result
+Don't drink too much!
