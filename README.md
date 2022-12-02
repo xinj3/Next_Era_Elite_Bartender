@@ -58,18 +58,7 @@ Since node modules are too large to be uploaded, users need to create their own 
 ```
 npx create-react-app test
 ```
-**Copy the files and folders ```public, src, package.json, package-lock.json``` into your created project ```test``` folder**
-```
-rm -r test/public & cp -r public test/public 
-rm -r test/src & cp -r src test/src
-rm test/package.json & cp package.json test/package.json
-rm test/package-lock.json & cp package-lock.json package-lock.json
-```
-
-**Copy the folder ```antd``` into your ```test/node_modules``` folder**
-```
-rm -r test/node_modules/antd & cp -r antd test/node_modules/antd
-```
+**- Copy the files and folders ```public, src, package.json, package-lock.json``` into your created project ```test``` folder**
 
 Navigate into ```test``` folder:
 ```
@@ -78,6 +67,9 @@ cd test
 ```
 npm add antd
 ```
+
+**- Copy the folder ```antd``` into your ```test/node_modules``` folder**
+
 
 ## Run Local Frontend
 ```
