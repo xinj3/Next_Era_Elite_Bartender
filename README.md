@@ -15,15 +15,15 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Localhost is at http://localhost:8080.
+Backend server is at localhost http://localhost:8080.
 
 ## Get Recommendation
 
-Use ```HTTP``` GET request to get the recommendation list from ```http://localhost:8080/``` for default recommendation:
+Use ```HTTP``` GET request to get the recommendation list from ```http://localhost:8080/by_mix``` for default recommendation:
 
 Send user input using the following json syxtax:
 ```
-{"user_input":"Long Island Tea, lemon, gin", "rec_num": 5}
+{"user_input":"Long Island Tea, lemon, gin"}
 ```
 
 Sample Output:
@@ -41,12 +41,12 @@ Sample Output:
 
 Alternatively, use ```HTTP``` GET request to get the recommendation list from ```http://localhost:8080/by_name``` to search by cocktail name. 
 ```
-{"user_input":"Long Island Tea", "rec_num": 5}
+{"user_input":"Long Island Tea"}
 ```
 
 Or, use ```HTTP``` GET request to get the recommendation list from ```http://localhost:8080/by_ingredients``` to search by ingredients
 ```
-{"user_input": "lemon, gin", "rec_num": 5}
+{"user_input": "lemon, gin"}
 ```
 
 # Frontend 
@@ -54,10 +54,11 @@ Or, use ```HTTP``` GET request to get the recommendation list from ```http://loc
 ## Env Requirements
 Install nodejs: https://nodejs.org/en/
 
-Since node modules are too large to be uploaded, users need to create their own nodejs project, running:
+Since node modules are too large to be uploaded, users need to create their own nodejs project, running (the project is created in a folder called ```test```):
 ```
 npx create-react-app test
 ```
+Navigate into ```test``` folder:
 ```
 cd test
 ```
@@ -65,15 +66,15 @@ cd test
 npm add antd
 ```
 
-**Copy the files and folders(public, src, package.json, package-lock.json) into your created project**
+**Copy the files and folders ```public, src, package.json, package-lock.json``` into your created project ```test``` folder**
 
-**Copy the folder antd into your node_modules folder**
+**Copy the folder ```antd``` into your ```test/node_modules``` folder**
 
 ## Run Local Frontend
 ```
 npm start
 ```
-Localhost is at:
+The website is running on localhost at:
 ```
 http://localhost:3000.
 ```

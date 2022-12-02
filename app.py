@@ -7,27 +7,21 @@ app = Flask(__name__)
 bartender = Bartender("dataset/cocktail_all.csv")
 bartender.load_analizer()
 
-@app.route("/", methods=["GET", "POST"])
-@cross_origin()
-def by_():
-    if request.method == "POST":
-        json_message = request.get_json()
-        return bartender.get_recommendation_list(json_message["user_input"])
-
 @app.route("/by_mix", methods=["GET", "POST"])
 @cross_origin()
 def by_mix():
     if request.method == "POST":
         json_message = request.get_json()
-        print(json_message)
-        return bartender.get_recommendation_list(json_message["user_input"])
+        print("/by_mix:", json_message)
+        return bartender.get_recommendation_list(json_message["user_input"].upper())
 
 @app.route("/by_ingredients", methods=["GET", "POST"])
 @cross_origin()
 def by_ingredients():
     if request.method == "POST":
         json_message = request.get_json()
-        return bartender.get_recommendation_list_by_ingredient(json_message["user_input"])
+        print("/by_ingredients:", json_message)
+        return bartender.get_recommendation_list_by_ingredient(json_message["user_input"].upper())
 
 
 @app.route("/by_name", methods=["GET", "POST"])
@@ -35,7 +29,8 @@ def by_ingredients():
 def by_name():
     if request.method == "POST":
         json_message = request.get_json()
-        return bartender.get_recommendation_list_by_name(json_message["user_input"])
+        print("/by_name:", json_message)
+        return bartender.get_recommendation_list_by_name(json_message["user_input"].upper())
 
 
 
