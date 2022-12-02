@@ -71,7 +71,7 @@ class Bartender():
         similar_items_sorted = similar_items.sort_values(by='Similarity', ascending=False)[:k]
         return self.convert_df_2_json(self.df[self.df['Cocktail Name'].isin(similar_items_sorted[:k].index)])
 
-    def get_image_url_list(self, names, placeHolder_addrss="img/default_img.png"):
+    def get_image_url_list(self, names, placeHolder_addrss="http://www.thecocktaildb.com/images/media/drink/wpxpvu1439905379.jpg"):
         url_list = []
         for name in names:
             if name in np.array(self.image_url["Name"]):
