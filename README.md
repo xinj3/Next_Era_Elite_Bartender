@@ -63,11 +63,6 @@ npm install
 **- Copy the folder ```antd``` into your ```test/node_modules``` folder and replace the current one** (This is because our antd uses a previous version)
 
 ## Run Local Frontend
-
-```
-cd test
-npm start
-```
 The website is running on localhost at:
 ```
 http://localhost:3000
@@ -75,6 +70,8 @@ http://localhost:3000
 
 ## Interact
 Simply click on the three different search buttons and search whatever you want.
+
+(Use full screen for better image display)
 
 ## Result
 Don't drink too much!
