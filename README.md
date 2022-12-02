@@ -54,25 +54,18 @@ Or, use ```HTTP``` GET request to get the recommendation list from ```http://loc
 ## Env Requirements
 Install nodejs: https://nodejs.org/en/
 
-Since node modules are too large to be uploaded, users need to create their own nodejs project, running (the project is created in a folder called ```test```):
-```
-npx create-react-app test
-```
-**- Copy the files and folders ```public, src, package.json, package-lock.json``` into your created project ```test``` folder**
-
-Navigate into ```test``` folder:
+Navigate into ```test``` folder, and install dependencies:
 ```
 cd test
-```
-```
-npm add antd
+npm install
 ```
 
-**- Copy the folder ```antd``` into your ```test/node_modules``` folder**
-
+**- Copy the folder ```antd``` into your ```test/node_modules``` folder and replace the current one** (This is because our antd uses a previous version)
 
 ## Run Local Frontend
+
 ```
+cd test
 npm start
 ```
 The website is running on localhost at:
