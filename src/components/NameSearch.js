@@ -23,6 +23,7 @@ class CustomSearch extends React.Component {
   onSubmit = (data) => {
     searchDrinkByName(data.drink_name)
       .then((data) => {
+        console.log(data)
         this.setState({
           displayModal: false,
         })
