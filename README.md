@@ -65,7 +65,7 @@ cd test
 npm add antd
 ```
 
-** Copy the files and folders(public, src, package.json, package-lock.json) into your created project **
+**Copy the files and folders(public, src, package.json, package-lock.json) into your created project**
 
 ## Run Local Frontend
 ```
