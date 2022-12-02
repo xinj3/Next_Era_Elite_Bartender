@@ -21,7 +21,7 @@ class Ingredients extends React.Component {
   }
  
   onSubmit = (data) => {
-    searchDrinkByIngredient(data.Ingredients)
+    searchDrinkByIngredient(data.ingredients_name)
       .then((data) => {
         this.setState({
           displayModal: false,

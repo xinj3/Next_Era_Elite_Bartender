@@ -9,9 +9,17 @@ bartender.load_analizer()
 
 @app.route("/", methods=["GET", "POST"])
 @cross_origin()
+def by_():
+    if request.method == "POST":
+        json_message = request.get_json()
+        return bartender.get_recommendation_list(json_message["user_input"])
+
+@app.route("/by_mix", methods=["GET", "POST"])
+@cross_origin()
 def by_mix():
     if request.method == "POST":
         json_message = request.get_json()
+        print(json_message)
         return bartender.get_recommendation_list(json_message["user_input"])
 
 @app.route("/by_ingredients", methods=["GET", "POST"])

@@ -3,65 +3,61 @@ const SERVER_ORIGIN = 'http://localhost:8080';
  
 const searchDrinkByIdUrl = `${SERVER_ORIGIN}/by_name`;
  
-export const searchDrinkByName = (drinkName) => {
+export const searchDrinkByName = async (drinkName) => {
   const data = {
     "user_input": drinkName
   }
-  return fetch(searchDrinkByIdUrl, {
+  const response = await fetch(searchDrinkByIdUrl, {
     // mode: 'no-cors',
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(data)
-  }).then((response) => {
-    if (response.status !== 200) {
-      throw Error('Fail to find the drink');
-    }
-    return response.json();
-  })
+  });
+  if (response.status !== 200) {
+    throw Error('Fail to find the drink');
+  }
+  return await response.json();
 }
 
 const searchDrinkByIngredientUrl = `${SERVER_ORIGIN}/by_ingredients`;
  
-export const searchDrinkByIngredient = (ingredientName) => {
+export const searchDrinkByIngredient = async (ingredientName) => {
   const data = {
     "user_input": ingredientName
   }
-  return fetch(searchDrinkByIngredientUrl, {
-    mode: 'no-cors',
+  const response = await fetch(searchDrinkByIngredientUrl, {
+    // mode: 'no-cors',
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(data)
-  }).then((response) => {
-    if (response.status !== 200) {
-      throw Error('Fail to find the drink');
-    }
-    return response.json();
-  })
+  });
+  if (response.status !== 200) {
+    throw Error('Fail to find the drink');
+  }
+  return await response.json();
 }
 
-const getRecommendedItemsUrl = `${SERVER_ORIGIN}/`;
+const searchMixUrl = `${SERVER_ORIGIN}/by_mix`;
  
-export const getRecommendations = (drinkName, ingredientName) => {
+export const searchMix = async (MixName) => {
   const data = {
-    "user_input": drinkName, ingredientName
+    "user_input": MixName
   }
-  return fetch(getRecommendedItemsUrl, {
-    mode: 'no-cors',
+  const response = await fetch(searchMixUrl, {
+    // mode: 'no-cors',
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(data)
-  })
-  .then((response) => {
-    if (response.status !== 200) {
-      throw Error('Fail to find the drink');
-    }
-    return response.json();
-  })
+  });
+  if (response.status !== 200) {
+    throw Error('Fail to find the drink');
+  }
+  return await response.json();
 }
 
