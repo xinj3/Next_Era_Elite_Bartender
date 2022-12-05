@@ -2,6 +2,10 @@
 
 In this project, we created a cocktail recommendation webpage that recommends cocktails based on users' preferences. More specifically, the user can choose prefered drinks by cocktail names, ingredients, or mixture of cocktail names and ingredients, and the webpage will provide cocktail details for the users. The frontend is a webpage where the users can input their preferences, and the most relevant cocktails will be listed with names, required ingredients and also preparation instructions. The backend is a recommendation system which takes the user inputs and returns a list of most relevant cocktails.
 
+# Software Usage Tutorial Presentation
+
+https://youtu.be/W7IxT6pR880
+
 # File Structure
 ```
 --- antd/: nodejs package for frondend
@@ -124,6 +128,11 @@ The key information used in the recommendation system are: cocktail name, cockta
 
 # Frontend - UI Webpage
 
+The frontend is based on nodejs' framework, using React. For the frontend itself, it is a project. The website components layout are written in file App.js.
+
+To communicate with the backend, I use REST API. Operations are directly based on HTTP methods, so that server doesn't need to parse extra things.
+
+To design the buttons and forms on the website, Ant Design is deployed. You could simply browse Ant Design and modify your code to get the layout you want for your frontend.
 
 # Teammember Contributions 
 
@@ -135,6 +144,6 @@ Xin Jin:
 
 Zhicong Fan:
 - Collected dataset from webpages (~3h)
-- Designed user-interaction page (~4h)
+- Designed user-interaction page (~5h)
 - Implemented the frontend backbone code (~8h)
 - Integrated frontend and backend code (~5h)
