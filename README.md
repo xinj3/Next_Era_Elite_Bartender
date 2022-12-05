@@ -107,11 +107,19 @@ The key information used in the recommendation system are: cocktail name, cockta
 - Third, a similarity matrix is calculated using the Tf-idf-weighted document-term matrix. Each entry records the cosine similarity score for two cocktails' ingredients.
 - Similar process was done to get the similarity matrix for searching by name.
 
-### Search by ingredients and names
+### Search by ingredients or names
 - Takes the user input and follow the same data preprocessing steps above.
 - User inputs are preprocessed and made into a `pseudo` drink
 - The `pseudo` drink will be used to calculate the similarity between drinks in the database using TF-IDF weight matrix
 - Backend then returns the top-rank drinks as a table to the front end for display
+
+### Search by ingredients and names
+- Takes the user input and follow the same data preprocessing steps above
+- The user inputs will be use to calculate the similarity between both ingredient TF-IDF matrix and also the name TF-IDF matrix
+- The results from the previous step will be merged and sorted
+- Backend then returns the total top-rank drinks as a table to the front end for display
+
+
 
 
 # Frontend - UI Webpage
