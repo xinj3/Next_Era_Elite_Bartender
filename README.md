@@ -120,8 +120,9 @@ The key information used in the recommendation system are: cocktail name, cockta
 # Teammember Contributions 
 
 Xin Jin:
-- Preprocessed the dataset into desired format (~5h)
-- Designed and implemented the recommendation system (~10h)
+- Aquired and preprocessed the dataset into desired format (~3h)
+- Designed and implemented the recommendation system backbone code(~7h)
+- Integrated the recommendation system with the backend host (~5h)
 - Host backend code on localhost (~5h)
 
 Zhicong Fan:
