@@ -46,6 +46,9 @@ npm install
 **- Copy the folder ```antd``` into your ```test/node_modules``` folder and replace the current one** (This is because our antd uses an old version).
 
 ## Run Local Frontend
+```
+npm start
+```
 The website is running on localhost at:
 ```
 http://localhost:3000
