@@ -10,7 +10,7 @@ In this project, we created a cocktail recommendation webpage that recommends co
 --- Documents/: project proposal and progress reports
 --- experiments/: for data preprocessing and backend code experiments
 --- img/
---- test/: frondend code
+--- frondend/: frondend code
 --- app.py: backend server
 --- bartender_backend.py: recommendation system code
 
@@ -37,13 +37,13 @@ Backend server is at localhost http://localhost:8080.
 ## Env Requirements
 Install nodejs: https://nodejs.org/en/
 
-Navigate into ```test``` folder, and install dependencies:
+Navigate into ```frondend``` folder, and install dependencies:
 ```
-cd test
+cd frondend
 npm install
 ```
 
-**- Copy the folder ```antd``` into your ```test/node_modules``` folder and replace the current one** (This is because our antd uses an old version).
+**- Copy the folder ```antd``` into your ```frondend/node_modules``` folder and replace the current one** (This is because our antd uses an old version).
 
 ## Run Local Frontend
 ```
